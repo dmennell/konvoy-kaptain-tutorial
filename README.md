@@ -84,15 +84,17 @@ Use URL and credentials provided at the end of the install process to access the
 konvoy get ops-portal
 ```
 
-Look around the Operations Portal.  Kaptain is designed to take advantage of the 
+Look around the Operations Portal.  Kaptain is designed to take advantage of the inherent User Access Control, Metrics, alerting, and Logging provided by the Konvoy Operations Portal
 
-You now have two options to retrieve the.  
+
+## Retrieve the Kaptain Browser URL
+
+You have two options to retrieve the Kaptyain URL.
 * If you ARE familiar with the kubernetes cli `KUBECTL` and have it installed, you can find the Kaptain Browser UI using the following commands: 
-  * Kaptain UI via the terminal
+  * Retrieve Kaptain UI via KUBECTL
+
 * If you ARE NOT familiar with the Kubernetes CLI `KUBECTL`, or do not have it installed on your local machine, we can extract the Kaptain browser UI from the Kubernetes Dashboard provided via the Konvoy Operations Portal using the following directions:
-  * Kaptain UI via the Browser
-
-
+  * Kaptain UI via the Kubernetes Dashboard
 
 ## Retrieve Kaptain UI URL Via KUBECTL
 
