@@ -3,7 +3,9 @@
 ## Initialize and Deploy
 
 ### Verify Konvoy is working
-`konvoy --version`
+```
+$ konvoy --version
+```
 
 If this is a new install, it may take a minute or two for the Docker layers to download and decompress.  You should see output that looks like the following:
 ```
@@ -16,7 +18,7 @@ If this is a new install, it may take a minute or two for the Docker layers to d
 ### Initialize Your Deployment
 In this exampple, we will be provisioning the Konvoy cluster on AWS.
 ```
-konvoy init --provisioner=aws
+$ konvoy init --provisioner=aws
 ```
 Assuming all goes as planned, you should see output that looks like the following:
 ```
@@ -24,7 +26,7 @@ Created configuration file successfully!
 ```
 
 ### Modify the `cluster.yaml` File
- Make the following changes to the `cluster.yaml` file that was created during the init step.  Examples of cluster.yaml are included in this repo in the files `cluster.before` and `cluster.after`.
+ Make the following changes to the `cluster.yaml` file that was created during the init step.  Examples of cluster.yaml are included in this repo in the files `cluster.before.yaml` and `cluster.after.yaml`.
 
 #### Enable Istio (Change False to True)
 ```
@@ -65,7 +67,7 @@ kind: ClusterConfiguration
 
 ### Run the Deployment
 ```
-konvoy up -y
+$ konvoy up -y
 ```
 After about 30-45 minutes, assuming everything went well, and your account has the proper permissions and quotas, you should see output that looks like the following:
 ```
@@ -81,11 +83,10 @@ If the cluster was recently created, the dashboard and services may take a few m
 ### Access the Konvoy Operations Portal
 Use URL and credentials provided at the end of the install process to access the Konvoy Ops Portal.  If you no longer have them, you can use the following command to rtetriecve them:
 ```
-konvoy get ops-portal
+$ konvoy get ops-portal
 ```
 
 Look around the Operations Portal.  Kaptain is designed to take advantage of the inherent User Access Control, Metrics, alerting, and Logging provided by the Konvoy Operations Portal
-
 
 ## Retrieve the Kaptain Browser URL
 
@@ -101,7 +102,7 @@ You have two options to retrieve the Kaptyain URL.
 ## Merge your kubeconfig
 Merge the newly created `admin.conf` with you local kubeconfig (this requires that the Kubernetes CLI `kubectl` is installed and running on your host).
 ```
-konvoy apply kubeconfig
+$ konvoy apply kubeconfig
 ```
 
 ## Access the Kaptain User Interface
