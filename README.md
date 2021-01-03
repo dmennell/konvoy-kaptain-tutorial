@@ -107,11 +107,11 @@ konvoy apply kubeconfig
 ## Access the Kaptain User Interface
 
 ```
-kubectl get services -n kubeflow | grep kubeflow-ingressgateway
+$ kubectl get services -n kubeflow | grep kubeflow-ingressgateway
 ```
 You should see something like the following:
 ```
-kubeflow-ingressgateway                        LoadBalancer   10.0.60.198   a60ae5bac77814fc2ac59c61df9cddf7-1779517899.us-west-2.elb.amazonaws.com   15021:30340/TCP,80:32221/TCP,443:30635/TCP,15443:30959/TCP   22m
+kubeflow-ingressgateway   LoadBalancer  10.0.60.198  a60ae5bac77814fc2ac59c61df9cddf7-1779517899.us-west-2.elb.amazonaws.com   15021:30340/TCP,80:32221/TCP,443:30635/TCP,15443:30959/TCP  22m
 ```
 
 Copy the Load Balancer address that was created.  In the above example, it is the following:
